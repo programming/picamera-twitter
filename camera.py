@@ -22,7 +22,7 @@ def delete(file):
 
 def tweet(file):
         message = "ENTER YOUR MESSAGE HERE"
-        twitter = twython.Twython('', '', '', '')
+        twitter = twython.Twython('API KEY', 'API SECRET KEY', 'ACCESS TOKEN', 'ACCESS TOKEN SECRET')
         photo = open(file, 'rb')
         response = twitter.upload_media(media=photo)
         twitter.update_status(status=message, media_ids=[response['media_id']])
